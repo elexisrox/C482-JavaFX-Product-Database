@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainScreen" prefHeight="400.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.Controller">
+   <Button layoutX="992.0" layoutY="348.0" mnemonicParsing="false" onAction="#exitHandler" text="Exit" />
+   <Label layoutX="38.0" layoutY="42.0" text="Inventory Management System">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <AnchorPane layoutX="77.0" layoutY="80.0" prefHeight="250.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+      <Label layoutX="16.0" layoutY="26.0" text="Parts">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchText" layoutX="247.0" layoutY="22.0" onAction="#getSearchResults" prefHeight="25.0" prefWidth="180.0" promptText="Search by Part ID or Name" />
+      <TableView fx:id="partsTable" layoutX="16.0" layoutY="54.0" prefHeight="141.0" prefWidth="418.0">
+         <columns>
+            <TableColumn fx:id="idColumn" prefWidth="75.0" text="Part ID" />
+            <TableColumn fx:id="nameColumn" prefWidth="110.42855834960938" text="Part Name" />
+            <TableColumn fx:id="inventoryLvlColumn" prefWidth="110.14288330078125" text="Inventory Level" />
+            <TableColumn fx:id="priceColumn" prefWidth="122.57147216796875" text="Price/Cost per Unit" />
+         </columns>
+      </TableView>
+      <Label fx:id="modPartErrorLbl" layoutX="16.0" layoutY="211.0" textFill="RED">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="searchPartsLbl" layoutX="16.0" layoutY="211.0" textFill="#757575"><font>
+         <Font name="System Italic" size="12.0" />
+      </font>
+      </Label>
+      <Button layoutX="260.0" layoutY="207.0" mnemonicParsing="false" onAction="#addHandler" text="Add" textAlignment="CENTER" />
+      <Button layoutX="312.0" layoutY="207.0" mnemonicParsing="false" onAction="#modifyHandler" text="Modify" textAlignment="CENTER" />
+      <Button layoutX="377.0" layoutY="207.0" mnemonicParsing="false" onAction="#deleteHandler" text="Delete" textAlignment="CENTER" />
+   </AnchorPane>
+   <AnchorPane layoutX="577.0" layoutY="80.0" prefHeight="250.0" prefWidth="450.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+      <children>
+         <Label layoutX="16.0" layoutY="26.0" text="Products">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+         <TextField fx:id="searchText1" layoutX="247.0" layoutY="22.0" onAction="#getSearchResults1" prefWidth="180.0" promptText="Search by Product ID or Name" />
+         <TableView fx:id="productsTable" layoutX="16.0" layoutY="54.0" prefHeight="141.0" prefWidth="418.0">
+            <columns>
+               <TableColumn fx:id="idColumn1" prefWidth="75.0" text="Product ID" />
+               <TableColumn fx:id="nameColumn1" prefWidth="110.42855834960938" text="Product Name" />
+               <TableColumn fx:id="inventoryLvlColumn1" prefWidth="110.14288330078125" text="Inventory Level" />
+               <TableColumn fx:id="priceColumn1" prefWidth="122.57147216796875" text="Price/Cost per Unit" />
+            </columns>
+         </TableView>
+         <Label fx:id="modProdErrorLbl" layoutX="21.0" layoutY="212.0" textFill="RED">
+            <font>
+               <Font name="System Italic" size="12.0" />
+            </font>
+         </Label>
+         <Label fx:id="searchProdsLbl" layoutX="16.0" layoutY="211.0" textFill="#757575">
+            <font>
+               <Font name="System Italic" size="12.0" />
+            </font>
+         </Label>
+         <Button layoutX="260.0" layoutY="207.0" mnemonicParsing="false" onAction="#addHandler1" text="Add" textAlignment="CENTER" />
+         <Button layoutX="312.0" layoutY="207.0" mnemonicParsing="false" onAction="#modifyHandler1" text="Modify" textAlignment="CENTER" />
+         <Button layoutX="377.0" layoutY="207.0" mnemonicParsing="false" onAction="#deleteHandler1" text="Delete" textAlignment="CENTER" />
+      </children>
+   </AnchorPane>
+</AnchorPane>
